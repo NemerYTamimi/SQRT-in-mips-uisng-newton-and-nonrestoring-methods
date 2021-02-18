@@ -1,5 +1,5 @@
 .data
-prompt0: .asciiz "Please choose algorith no.\n1-Newton method \n2-simple_method \n3-non-restoring\n"
+prompt0: .asciiz "Please choose algorith no.\n 1-Newton method \n2-simple_method \n3-non-restoring\n"
 prompt1: .asciiz "Please enter the value of x to find sqrt(x):"
 prompt2: .asciiz "The result is:"
 prompt3: .asciiz "\nEnter 1 to restart or any key to end:"
@@ -42,7 +42,7 @@ sqrt_loop:
     	sub     $2, $2, $4     	# $2 = x - (x^2 - D) / (2*x)
     	sub     $8, $8, $2     	# $8 = oldX - x
     	abs     $8, $8         	# $8 = | oldX - x |
-    	bne 	$8,$0,sqrt_loop  	# oldX ?= x if no jmp to subsqrt
+    	bne 	$8,$0,sqrt_loop  	# oldX ?= x if no jmp to sqrt_loop
     	move	$3, $2         	#result = $3
     	subi	$3,$3,1		#floor(result)
 	jal	result
